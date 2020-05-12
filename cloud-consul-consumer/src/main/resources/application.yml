@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        serviceName: service-consumer
+        instance-id: ${spring.application.name}:${server.port}
+        register: false
+  application:
+    name: cloud-consul-consumer
+server:
+  port: 8502
+
