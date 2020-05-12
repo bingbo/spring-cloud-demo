@@ -2,7 +2,7 @@
 
 ## consul+boot微服务
 
-1. 安装consul并启动服务注册中心[consul](https://www.consul.io/docs/agent/basics.html)
+1. 安装consul并启动服务注册中心[\[consul\]](https://www.consul.io/docs/agent/basics.html)
 1. 通过consul-discovery注册服务[cloud-consul-producer]
 1. 通过consul-discovery发现使用服务[cloud-consul-consumer]
 
