@@ -22,7 +22,6 @@
         <module>cloud-consul-producer</module>
         <module>cloud-consul-consumer</module>
         <module>cloud-config-demo</module>
-        <module>cloud-config-server</module>
     </modules>
 
     <name>spring-cloud-demo</name>
