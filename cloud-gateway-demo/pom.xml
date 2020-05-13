@@ -18,6 +18,7 @@
         <module>gateway-middle</module>
         <module>gateway-senior</module>
         <module>consul-producer-two</module>
+        <module>consul-producer-one</module>
     </modules>
 
     <name>cloud-gateway-demo</name>

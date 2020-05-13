@@ -61,3 +61,6 @@ spring:
             - Query=baz
             - Cookie=chocolate, ch.p
             - After=2018-01-20T06:06:06+08:00[Asia/Shanghai]
+logging:
+  level:
+    org.springframework.cloud.gateway: debug
