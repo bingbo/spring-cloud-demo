@@ -5,18 +5,16 @@
 
     <parent>
         <groupId>com.ibingbo</groupId>
-        <artifactId>spring-cloud-demo</artifactId>
+        <artifactId>cloud-eureka-demo</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-
     <groupId>com.ibingbo</groupId>
-    <artifactId>cloud-producer</artifactId>
+    <artifactId>cloud-consumer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
-    <name>cloud-producer</name>
-    <!-- FIXME change it to the project's website -->
+    <name>cloud-consumer</name>
     <url>http://www.example.com</url>
 
     <properties>
@@ -47,5 +45,11 @@
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-feign</artifactId>
+        </dependency>
     </dependencies>
+
+
 </project>

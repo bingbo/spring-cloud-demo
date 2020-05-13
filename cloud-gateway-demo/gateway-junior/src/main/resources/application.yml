@@ -1,0 +1,63 @@
+server:
+  port: 8080
+spring:
+  cloud:
+    gateway:
+      routes:
+        ##通过路径匹配,ej:http://localhost:8080/spring-cloud
+        - id: one_route
+          uri: http://ityouknow.com
+          predicates:
+            - Path=/spring-cloud
+        #在这个时间之后访问
+        - id: after_route
+          uri: http://www.baidu.com
+          predicates:
+            - After=2018-01-20T06:06:06+08:00[Asia/Shanghai]
+        #在这个时间之前访问
+        - id: before_route
+          uri: http://www.126.com
+          predicates:
+            - Before=2028-01-20T06:06:06+08:00[Asia/Shanghai]
+        ##根据cookie指定转发,ej:curl http://localhost:8080 --cookie "name=bill"
+        - id: cookie_route
+          uri: http://www.163.com
+          predicates:
+            - Cookie=name, bill
+        ##通过Header属性匹配,ej:curl http://localhost:8080  -H "X-Request-Id:666666"
+        - id: header_route
+          uri: http://www.baidu.com
+          predicates:
+            - Header=X-Request-Id, \d+
+        ##通过host匹配，ej:curl http://localhost:8080  -H "Host: www.baidu.com"
+        - id: host_route
+          uri: http://126.com
+          predicates:
+            - Host=**.baidu.com
+        ##通过请求方式匹配,ej:curl -X POST http://localhost:8080返回404
+        - id: method_route
+          uri: http://www.baidu.com
+          predicates:
+            - Method=GET
+        ##通过请求参数匹配,ej:curl localhost:8080?name=bill
+        - id: query_route
+          uri: http://www.baidu.com
+          predicates:
+            - Query=name
+        ##通过请求IP地址匹配
+        - id: remoteaddr_route
+          uri: http://baidu.com
+          predicates:
+            - RemoteAddr=192.168.1.1/24
+        ##组合使用
+        - id: host_foo_path_headers_to_httpbin
+          uri: http://ityouknow.com
+          predicates:
+            - Host=**.foo.org
+            - Path=/headers
+            - Method=GET
+            - Header=X-Request-Id, \d+
+            - Query=foo, ba.
+            - Query=baz
+            - Cookie=chocolate, ch.p
+            - After=2018-01-20T06:06:06+08:00[Asia/Shanghai]
