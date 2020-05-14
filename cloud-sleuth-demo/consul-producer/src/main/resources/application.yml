@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        serviceName: sleuth-consul-producer
+        instance-id: ${spring.application.name}:${server.port}
+  application:
+    name: sleuth-consul-producer
+  zipkin:
+    base-url: http://localhost:8900
+  sleuth:
+    sampler:
+      probability: 1.0
+server:
+  port: 8501

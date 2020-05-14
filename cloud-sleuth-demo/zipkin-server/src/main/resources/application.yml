@@ -1,0 +1,21 @@
+server:
+  port: 8900
+spring:
+  application:
+    name: sleuth-zipkin-server
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        register: true
+        service-name: sleuth-zipkin-server
+        instance-id: ${spring.application.name}:${server.port}
+management:
+  metrics:
+    web:
+      server:
+        auto-time-requests: false
+logging:
+  level:
+    org.springframework.cloud.sleuth: debug
