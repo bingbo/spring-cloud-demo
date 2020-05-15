@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: bus-eureka-server
+server:
+  port: 8100
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:${server.port}/eureka/
+    register-with-eureka: false
+    fetch-registry: false

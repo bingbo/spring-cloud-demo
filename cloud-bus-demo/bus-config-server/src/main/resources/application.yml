@@ -1,0 +1,18 @@
+server:
+  port: 8101
+spring:
+  application:
+    name: bus-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/bingbo/spring-cloud-demo
+          search-paths: cloud-bus-demo/config-repo
+          username: bingbo
+          password: Bing68255448
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8100/eureka/

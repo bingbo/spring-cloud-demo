@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8101
+      name: app-config
+      label: master
+      profile: dev
+      discovery:
+        enabled: true
+        service-id: bus-config-server
+    bus:
+      trace:
+        enabled: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8100/eureka/

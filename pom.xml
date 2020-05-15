@@ -18,11 +18,11 @@
     <modules>
         <module>cloud-config-demo</module>
         <module>cloud-gateway-demo</module>
-        <module>cloud-bus-demo</module>
         <module>cloud-consul-demo</module>
         <module>cloud-eureka-demo</module>
         <module>cloud-sleuth-demo</module>
         <module>cloud-zuul-demo</module>
+        <module>cloud-bus-demo</module>
     </modules>
 
     <name>spring-cloud-demo</name>
